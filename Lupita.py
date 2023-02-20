@@ -19,10 +19,6 @@ birthdayList = json.load(jsonFile)
 # An empty dictionary
 birthdayDictionary = {}
 
-# to get user input // Correction position of variable name
-name = input("Enter a name:")
-print("Searching " + name + " in databse, please wait...")
-
 
 # loop
 for elem in birthdayList:
@@ -31,13 +27,15 @@ for elem in birthdayList:
 
     name = elem['name']
     birthday = elem['birthday']
-
-    if name == elem:
-        print("name = " + name)
-        print("Birthday = " + birthday)
-
     birthdayDictionary[name] = birthday
+
+# to get user input
+name = input("Enter a name:")
+print("Searching " + name + " in databse, please wait...")
+
+# get a key value from the input in the new dictionary after the loop
+birthdayDictionary.get(name, "Sorry no esta bro")
 
 
 # to print a value in the dictionary by giving it a string with the name as the key
-print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
+print(name + "'s birthday is: " + birthdayDictionary[name])
