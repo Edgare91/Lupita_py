@@ -30,12 +30,15 @@ for elem in birthdayList:
     birthdayDictionary[name] = birthday
 
 # to get user input
-name = input("Enter a name:")
-print("Searching " + name + " in databse, please wait...")
+name = input("\nEnter a name: ")
 
 # get a key value from the input in the new dictionary after the loop
-birthdayDictionary.get(name, "Sorry no esta bro")
+# How can i concanete a string before the default else??
+# (birthdayDictionary.get(name))
 
 
 # to print a value in the dictionary by giving it a string with the name as the key
-print(name + "'s birthday is: " + birthdayDictionary[name])
+if name in birthdayDictionary:
+    print(name + "'s birthday is: " + birthdayDictionary[name]+"\n")
+else:
+    print("Sorry this person is not a Lupita's friend :(\n")
